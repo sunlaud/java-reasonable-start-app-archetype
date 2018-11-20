@@ -1,0 +1,10 @@
+#Build artifacts
+target/
+
+#IDE files
+.idea/
+*.iml
+/.settings/
+.classpath
+.project
+
