@@ -5,7 +5,8 @@ Intended for generation Maven project skeleton for generic Java project.
 ### Includes
 * ban duplicate dependencies
 * ensure same transitive dependency version is used by all dependencies
-* ban unused dependencies
+* ensure that every transitive dependency got version not lower that it specified in dependency pom
+* ban unused dependencies and used undeclared dependencies
 * check for dependencies and plugin updates when built (excluding alpha-, beta- and other non-release versions)
 * show JVM internal API usages (via jdeps utility)
 * configured tagging for release

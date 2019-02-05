@@ -73,6 +73,7 @@
                                 <rules>
                                     <banDuplicatePomDependencyVersions/>
                                     <dependencyConvergence/>
+                                    <requireUpperBoundDeps/>
                                 </rules>
                                 <fail>true</fail>
                             </configuration>
