@@ -29,13 +29,15 @@ Intended for generation Maven project skeleton for generic Java project.
 
 #### Next steps in generated project (optional)
 
-1. Update dependencies to latest versions:
+1. Update dependencies to latest versions (this will omit alpha-, beta- and other non-release versions):
     ```
     mvn versions:use-latest-releases versions:update-properties
     ```
     Note: by default check for new dependencies and plugin versions is performed each time project is built.
-    If this is not desired, remove plugin invocation from build.
-
+    If this is not desired, remove plugin invocation from build and check for updates manually using:
+    ```
+    mvn versions:display-plugin-updates versions:display-property-updates versions:display-dependency-updates
+    ```
 
 ### Development
 
