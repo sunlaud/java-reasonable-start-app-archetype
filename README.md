@@ -26,3 +26,22 @@ Intended for generation Maven project skeleton for generic Java project.
       -DarchetypeArtifactId=java-reasonable-start-app-archetype \
       -DarchetypeVersion=1.0-SNAPSHOT
     ```
+
+#### Next steps in generated project (optional)
+
+1. Update dependencies to latest versions:
+    ```
+    mvn versions:use-latest-releases versions:update-properties
+    ```
+    Note: by default check for new dependencies and plugin versions is performed each time project is built.
+    If this is not desired, remove plugin invocation from build.
+
+
+### Development
+
+Project contains an integration test which generates maven project from archetype.
+Generated project is placed in 'target/test-classes/projects/test-project/' directory.
+
+
+### TODO
+* multimodule project
