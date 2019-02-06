@@ -5,6 +5,11 @@
         <requiredProperty key="javaVersion">
             <validationRegex>[0-9]+(\.[0-9]+)*</validationRegex>
         </requiredProperty>
+        <requiredProperty key="gitignore">
+            <!-- hack to deal with built-in filename ignores in maven jar plugin - it simply omits .gitignore from archetype jar file,
+             so just create an artificial property to hold ".gitignore" as filename and use it as a dynamic filename -->
+            <defaultValue>.gitignore</defaultValue>
+        </requiredProperty>
     </requiredProperties>
 
     <fileSets>
@@ -20,10 +25,11 @@
                 <include>**/*.java</include>
             </includes>
         </fileSet>
-        <fileSet encoding="UTF-8">
+        <fileSet>
             <directory/>
             <includes>
-                <include>*</include>
+                <include>maven-versions-plugin-rules.xml</include>
+                <include>__gitignore__</include>
             </includes>
         </fileSet>
     </fileSets>

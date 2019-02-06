@@ -10,6 +10,7 @@ Intended for generation Maven project skeleton for generic Java project.
 * check for dependencies and plugin updates when built (excluding alpha-, beta- and other non-release versions)
 * show JVM internal API usages (via jdeps utility)
 * configured tagging for release
+* basic .gitignore with some frequent ignores
 
 
 ### Howto
