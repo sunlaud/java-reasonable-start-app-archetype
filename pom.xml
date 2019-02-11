@@ -41,7 +41,7 @@
                     <version>2.7</version>
                     <configuration>
                         <!-- just reuse version specification from generated project :) -->
-                        <rulesUri>file:///${project.build.sourceDirectory}/../resources/archetype-resources/maven-versions-plugin-rules.xml</rulesUri>
+                        <rulesUri>file:///${project.build.resources[0].directory}/archetype-resources/maven-versions-plugin-rules.xml</rulesUri>
                     </configuration>
                     <executions>
                         <execution>
