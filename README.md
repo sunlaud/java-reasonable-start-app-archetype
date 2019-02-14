@@ -29,7 +29,7 @@ Intended for generation Maven project skeleton for generic Java project.
 
 #### Next steps in generated project (optional)
 
-1. Update dependencies to latest versions (this will omit alpha-, beta- and other non-release versions):
+* Update dependencies to latest versions (this will omit alpha-, beta- and other non-release versions):
     ```
     mvn versions:use-latest-releases versions:update-properties
     ```
@@ -37,6 +37,10 @@ Intended for generation Maven project skeleton for generic Java project.
     If this is not desired, remove plugin invocation from build and check for updates manually using:
     ```
     mvn versions:display-plugin-updates versions:display-property-updates versions:display-dependency-updates
+    ```
+* Show build phases (using buildplan-maven-plugin)
+    ```
+    mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list
     ```
 
 ### Development

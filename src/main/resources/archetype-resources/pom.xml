@@ -100,10 +100,12 @@
                     <executions>
                         <execution>
                             <id>check-dependencies-usage</id>
+                            <phase>test-compile</phase> <!-- the earliest phase we may use for reliable deps usage check -->
                             <goals>
                                 <goal>analyze-only</goal>
                             </goals>
                             <configuration>
+                                <skip>${maven.test.skip}</skip> <!-- skip if test sources are not compiled because otherwise we would have false 'unused test deps' error -->
                                 <failOnWarning>true</failOnWarning>
                                 <verbose>true</verbose>
                             </configuration>
