@@ -196,6 +196,14 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                    <failOnWarning>true</failOnWarning>
+                    <compilerArgs>
+                        <arg>-Xlint:all</arg>
+                        <arg>-Xlint:-processing</arg>
+                        <arg>-Xlint:-serial</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>

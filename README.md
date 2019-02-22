@@ -9,6 +9,7 @@ Intended for generation Maven project skeleton for generic Java project.
 * ban unused dependencies and used undeclared dependencies
 * check for dependencies and plugin updates when built (excluding alpha-, beta- and other non-release versions)
 * show JVM internal API usages (via jdeps utility)
+* maven compiler configured to fail on warnings
 * configured tagging for release
 * basic .gitignore with some frequent ignores
 
