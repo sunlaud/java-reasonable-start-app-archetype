@@ -1,17 +1,29 @@
 ## Maven archetype with various opinionated best-practices enforced
 
-Intended for generation Maven project skeleton for generic Java project.
+Intended for generation Maven project skeleton for generic Java project with some batteries included.
 
-### Includes
-* ban duplicate dependencies
-* ensure same transitive dependency version is used by all dependencies
-* ensure that every transitive dependency got version not lower that it specified in dependency pom
-* ban unused dependencies and used undeclared dependencies
-* check for dependencies and plugin updates when built (excluding alpha-, beta- and other non-release versions)
-* show JVM internal API usages (via jdeps utility)
-* maven compiler configured to fail on warnings
-* configured tagging for release
-* basic .gitignore with some frequent ignores
+
+### Included batteries
+
+* ##### Code style:
+    * a reasonable non-obtrusive checkstyle config (mostly Sun coding conventions with some tweaks)
+    * code style config for IDE(s) set up to comply with checkstyle rules (as of now only for IntelliJ IDEA)
+
+* ##### Maven best practices enforced:
+    * ban duplicate dependencies
+    * ensure same transitive dependency version is used by all dependencies (dependency convergence)
+    * ensure that every transitive dependency got version not lower that it specified in dependency pom
+    * ban unused dependencies and used undeclared dependencies
+    * compiler plugin configured to fail on warnings
+    * detect JDK internal API usages (via jdeps utility) and fail build if any found
+
+* ##### Other Maven goodies:
+    * versions plugin configred to exclude alpha-, beta- and other non-release versions when checking for updates
+    * check for dependencies and plugin updates when built (a bit controversial but easy to turn off)
+    * configured tagging for release plugin
+
+* ##### Misc:
+    * basic .gitignore with some frequent ignores
 
 
 ### Howto
@@ -39,6 +51,8 @@ Intended for generation Maven project skeleton for generic Java project.
     ```
     mvn versions:display-plugin-updates versions:display-property-updates versions:display-dependency-updates
     ```
+* Import code style config (located in `build-config` dir) into IDE
+* Install checksyle plugin for IDE and import checkstyle config (located in `build-config` dir)
 * Show build phases (using buildplan-maven-plugin)
     ```
     mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list

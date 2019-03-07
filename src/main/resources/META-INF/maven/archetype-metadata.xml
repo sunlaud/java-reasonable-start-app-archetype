@@ -30,6 +30,7 @@
             <includes>
                 <include>maven-versions-plugin-rules.xml</include>
                 <include>__gitignore__</include>
+                <include>build-config/**</include>
             </includes>
         </fileSet>
     </fileSets>

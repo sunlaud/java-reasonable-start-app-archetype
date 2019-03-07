@@ -144,6 +144,34 @@
                         <pushChanges>false</pushChanges>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <configuration>
+                        <consoleOutput>true</consoleOutput>
+                        <configLocation>build-config/checkstyle.xml</configLocation>
+                        <violationSeverity>info</violationSeverity>
+                        <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <!-- use latest checkstyle instead of one bundled with plugin (to support latest java versions) -->
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>8.18</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
                 <!-- lock down plugins versions to avoid using Maven defaults -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -225,6 +253,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jdeps-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

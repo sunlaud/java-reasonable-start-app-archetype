@@ -9,10 +9,10 @@ class AppTest {
     @Test
     void someTest() {
         //GIVEN
-        String src = "someFooBar";
+        App sut = new App();
 
         //WHEN
-        String uncamelized = App.uncamelize(src);
+        String uncamelized = sut.uncamelize("someFooBar");
 
         //THEN
         assertThat(uncamelized).isEqualTo("some foo bar");
