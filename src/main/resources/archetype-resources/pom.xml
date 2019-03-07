@@ -206,6 +206,24 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>check-dependencies-usage</id>
+                        <configuration>
+                            <ignoredUsedUndeclaredDependencies>
+                                <usedUndeclaredDependency>org.junit.jupiter:junit-jupiter-api</usedUndeclaredDependency>
+                                <usedUndeclaredDependency>org.junit.jupiter:junit-jupiter-params</usedUndeclaredDependency>
+                            </ignoredUsedUndeclaredDependencies>
+                            <ignoredUnusedDeclaredDependencies>
+                                <unusedDeclaredDependency>org.junit.jupiter:junit-jupiter</unusedDeclaredDependency>
+                            </ignoredUnusedDeclaredDependencies>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jdeps-plugin</artifactId>
             </plugin>
             <plugin>
